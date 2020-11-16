@@ -1,0 +1,15 @@
+version: '3'
+
+volumes:
+  minioDB:
+
+services:
+  minio:
+    image:  minio/minio
+    container_name: minio
+    environment:
+      MINIO_ACCESS_KEY: AKIAIOSFODNN7EXAMPLE
+      MINIO_SECRET_KEY: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+    command: server /data
+    ports:
+      - 9001:9000
